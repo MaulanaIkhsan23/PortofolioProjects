@@ -113,7 +113,7 @@ where rn <= 3
 
 
 
--- distribution rating (bucket 1–2, 2–3, 3–4, 4–5)
+-- distribution rating (bucket 1â€“2, 2â€“3, 3â€“4, 4â€“5)
 
 select 
 	case
@@ -153,4 +153,5 @@ from PortofolioProject.dbo.AmazonBestSeller
 select top 10 product_title, product_star_rating, product_num_ratings, product_star_rating * log(1+product_num_ratings) as score
 from PortofolioProject.dbo.AmazonBestSeller
 where product_star_rating is not null and product_num_ratings is not null
+
 order by score desc
